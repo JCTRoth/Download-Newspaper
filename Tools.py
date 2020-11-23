@@ -8,4 +8,4 @@ class Tools:
         return time.strftime("%Y%m%d")
 
     def get_telegram_upload_command(group_url, file_path):
-        return "telegram-upload --to " + group_url + " " + file_path
+        return "telegram-upload --delete-on-success --to " + group_url + " " + file_path

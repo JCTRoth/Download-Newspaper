@@ -161,3 +161,4 @@ telegram-upload.session
 
 # MediaFiles
 *.pdf
+*.drawio
