@@ -27,7 +27,7 @@ crontab -e
 *     *     *     *     *  Command
 -     -     -     -     -
 |     |     |     |     |
-|     |     |     |     +----- Weekday (0 - 7) (Sunday is 0 und 7)
+|     |     |     |     +----- Weekday (0 - 7) (Sunday is 0 and 7)
 |     |     |     +------- Month (1 - 12)
 |     |     +--------- Day (1 - 31)
 |     +----------- Hour (0 - 23)
