@@ -14,5 +14,6 @@ config.newsletter.url = ''
 config.newsletter.cookie_list = ''
 config.newsletter.boundary = ''
 config.newsletter.pdf_endpoint = ''
+config.upload_targets.telegram = ''
 
 console.log(JSON.stringify(config))
