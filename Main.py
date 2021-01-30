@@ -12,10 +12,9 @@ jsonConfig.read_config_file("config.json")
 pdf_endpoint = jsonConfig.config.get("newsletter").get("pdf_endpoint")
 url = jsonConfig.config.get("newsletter").get("url")
 cookie = jsonConfig.config.get("newsletter").get("cookie_list")
-boundary = jsonConfig.config.get("newsletter").get("cookie_list")
 telegram_url = jsonConfig.config.get("upload_targets").get("telegram")
 
-Download_PDF.run(url, cookie, boundary, pdf_endpoint)
+Download_PDF.run(url, cookie, pdf_endpoint)
 
 pdf_path = "./" + Tools.get_date_string() + pdf_endpoint
 print("PDF Path: " + pdf_path)

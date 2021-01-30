@@ -1,30 +1,26 @@
-import http.client
-import mimetypes
+import requests
 from Tools import *
 
 
 class Download_PDF:
 
-    def run(i_url, i_cookie, i_boundary, i_pdf_endpoint):
+    def run(i_url, i_cookie, i_pdf_endpoint):
 
-        conn = http.client.HTTPSConnection(i_url)
+        # Construct Endpoint
+        pdf_file = Tools.get_date_string() + i_pdf_endpoint
 
-        boundary = i_boundary
+        https_url = "https://" + i_url + "/ePaper2/archive/" + pdf_file
 
         headers = {
             'Host': i_url,
             'Cookie': i_cookie,
-            'Content-type': 'multipart/form-data; boundary={}'.format(boundary)
         }
 
-        # Construct Endpoint
-        pdf_file = "./" + Tools.get_date_string() + i_pdf_endpoint
-
         # Fire Request
-        conn.request("GET", "/ePaper2/archive/" + pdf_file, None, headers)
-        res = conn.getresponse()
-        data = res.read()
+        res = requests.request("GET", url=https_url,
+                               data=None, headers=headers)
+        data = res.content
 
         # Write Request Return to File
-        with open(pdf_file, 'wb') as f:
+        with open("./" + pdf_file, 'wb') as f:
             f.write(data)
