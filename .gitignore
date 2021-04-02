@@ -188,3 +188,5 @@ bundles/
 vendor/pkg/
 pyenv
 Vagrantfile
+*.zip
+*.7z

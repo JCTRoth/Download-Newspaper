@@ -15,18 +15,19 @@ RUN apk add -u --no-cache libcurl libstdc++ \
     && apk add -u --no-cache --virtual .build-deps build-base libffi-dev curl-dev \
     && rm -rf /var/cache/apk/*
 
+# Copy Config Files to the container
+WORKDIR /app
+ADD . /app
+
+COPY telegram-upload.session /app
+
 # Install pip requirements
 ADD install_py_libs.sh .
 RUN ./install_py_libs.sh
 
-WORKDIR /app
-ADD . /app
-
-# Copy Config Files to the Docker
-
 # Switching to a non-root user
 RUN addgroup -S app && adduser -S -G app app
-# USER app
 
-# During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
+# Run program
+RUN cd /app
 CMD ["python", "Main.py"]
