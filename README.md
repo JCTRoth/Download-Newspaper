@@ -8,10 +8,30 @@ If you want to use this program you need a digital subscription of [Morgenweb.de
 <br/>
 
 ## Setup
-.. \
-.. \
-..
+- Run install_py_libs as SU or with sudo
+- Run Create_Config.js in browser
+- Get Telegram Developer Key
+- Get Telegram Group URL from Telegram Web
+- Run Download_PDF.py for first config 
 
+
+### Example Conifg
+```sh
+{
+    "newsletter": {
+        "url": "digitalezeitung-bergstraesser-anzeiger.morgenweb.de",
+        "cookie_list": "xxxxxxxxxx",
+        "pdf_endpoint": "_ba-be_0.pdf"
+    },
+    "upload_targets": {
+        "telegram": "https://t.me/joinchat/xxxxxxxxx"
+    }
+}
+```
+###
+```sh
+chmod +x ~/Download-Newspaper/Run_Newspaper_Download.sh
+```
 
 ### Run
 ```sh
@@ -19,7 +39,7 @@ crontab -e
 ```
 ### Add line
 ```sh
-0 5   *   *   1,2,3,4,5,6   /YOUR_PATH/Main.py
+ 10 7 * * * sh ~/Download-Newspaper/Run_Newspaper_Download.sh > /dev null 2>&1
 ```
 
 ### If you want another schedule:
