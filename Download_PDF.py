@@ -7,9 +7,13 @@ class Download_PDF:
     def run(i_url, i_cookie, i_pdf_endpoint):
 
         # Construct Endpoint
-        pdf_file = Tools.get_date_string() + i_pdf_endpoint
+        # pdf_file = Tools.get_date_string() + i_pdf_endpoint
 
+        # Example:
+        # https://e-paper-reader.bergstraesser-anzeiger.de/bergstraesseranzeiger/931/fullpdf/
         https_url = "https://" + i_url + "/ePaper2/archive/" + pdf_file
+
+        # https_url = "https://" + i_url + "/ePaper2/archive/" + pdf_file
 
         headers = {
             'Host': i_url,

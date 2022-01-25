@@ -1,5 +1,8 @@
 import json
 
+# TODO ADD FUNCTION: WRITE TO JSON FILE TO UPDATE COUNTER
+
+
 
 class config:
 

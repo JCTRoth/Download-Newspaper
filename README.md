@@ -5,6 +5,8 @@ Each morning this MicroService downloads my newspaper and uploads it to my perso
 
 If you want to use this program you need a digital subscription of [Morgenweb.de](https://abo-bergstraesser-anzeiger.morgenweb.de/?hnr=paywall])
 
+Should also work for other newspaper of Visiolink.com 
+
 <br/>
 
 ## Setup
@@ -12,7 +14,7 @@ If you want to use this program you need a digital subscription of [Morgenweb.de
 - Run Create_Config.js in browser
 - Get Telegram Developer Key
 - Get Telegram Group URL from Telegram Web
-- Run Download_PDF.py for first config 
+- Run Main.py for first config 
 
 
 ### Example Conifg
@@ -22,6 +24,7 @@ If you want to use this program you need a digital subscription of [Morgenweb.de
         "url": "digitalezeitung-bergstraesser-anzeiger.morgenweb.de",
         "cookie_list": "xxxxxxxxxx",
         "pdf_endpoint": "_ba-be_0.pdf"
+        "counter": 931
     },
     "upload_targets": {
         "telegram": "https://t.me/joinchat/xxxxxxxxx"
@@ -30,7 +33,7 @@ If you want to use this program you need a digital subscription of [Morgenweb.de
 ```
 ###
 ```sh
-chmod +x ~/Download-Newspaper/Run_Newspaper_Download.sh
+chmod +x /home/YOUR_USER_NAME/Download-Newspaper/Run_Newspaper_Download.sh
 ```
 
 ### Run
